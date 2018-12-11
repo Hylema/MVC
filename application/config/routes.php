@@ -20,7 +20,7 @@ return [
 
     'person/change' => [
         'controller' => 'person',
-        'action' => 'change',
+        'action' => 'add',
     ],
 
     'person/delete' => [

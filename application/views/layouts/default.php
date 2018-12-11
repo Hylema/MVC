@@ -5,128 +5,174 @@
     <title><?php echo $title; ?></title>
     <link href="../../../public/style/style.css"/>
     <style>
+
         body{
-            padding: 0;
             width: 80%;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-
-        button{
-            outline: none;
-            text-decoration: none;
-            cursor: pointer;
-            text-align: center;
-            background: #41b783;
-            width: 100%;
-            color: white;
-            font-size: 20px;
-            border: 1px solid black;
-        }
-
-        input{
-            background: #edeef0;
-            border: none;
-            font-size: 18px;
-            border: 1px solid black;
-        }
-
-        input:hover {
-            outline: none;
-            text-decoration: none;
-        }
-
-        form{
-            width: 100%;
-            display: flex;
-            margin: 0;
-        }
-
-        form div, input{
-            width: 100%;
-            display: flex;
-            padding: 15px;
-            text-align: center;
-        }
-
-        h2{
-            text-align: center;
-            background: indigo;
-            margin: 0;
-            padding: 20px;
-            color: white;
+            margin: 0 10%;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         a{
-            text-decoration: none;
             outline: none;
+            text-decoration: none;
+            color: white;
         }
 
         a:hover {
-            text-decoration: none;
-            outline: none;
-            color: #41b783;
-        }
-
-        .content{
-            width: 100%;
-        }
-
-        .blockContent{
-            width: 33%;
-            text-align: center;
-            border: 1px solid silver;
-            font-size: 20px;
-            float: left;
-        }
-
-        .blockContent:hover{
-            background: #41b783;
-            transition: 0.3s ease;
-            cursor: pointer;
-            color: white;
-        }
-
-        .search{
-            width: 70%;
-            font-size: 18px;
-            text-align: center;
-            color: white;
             outline: none;
             text-decoration: none;
         }
 
-        .btn{
-            width: 30%;
+        img{
+
         }
 
-        .addContent{
-            width: 100%;
-            padding: 20px;
-            background: #41b783;
+        h1{
+            text-align: center;
             color: white;
+            background: #41b783;
+            margin: 0;
+            padding: 15px;
+        }
+
+        form{
+            margin: 0;
+        }
+
+        button{
+            border: none;
+        }
+
+        button, input{
+            outline: none;
+            text-decoration: none;
+        }
+
+        button:hover, input:hover{
+            outline: none;
+            text-decoration: none;
+        }
+
+        .tac{
+            text-align: center;
+        }
+
+        .searchFile, .searchInput{
+            width: 100%;
+            text-align: center;
+            padding: 15px;
             font-size: 20px;
             cursor: pointer;
         }
 
-        .change{
-            width: 50%;
-            background: yellow;
-            padding: 20px;
-            color: black;
-            font-size: 15px;
-        }
-
-        .delete{
-            width: 50%;
+        .UsersBlock{
+            width: 22.34%;
             background: #F08080;
+            border-right: 0.5px solid white;
             padding: 20px;
-            color: black;
-            font-size: 15px;
+            flex-wrap:wrap;
         }
 
-        .mainIndex a{
+        .UserName{
             font-size: 20px;
+            color: white;
+        }
+
+        .UserName div{
+            padding: 20px;
+            margin: 5px;
+            border: 2px solid white;
+        }
+
+        .blockAdd {
+            text-align: center;
+            padding: 16.5px;
+            color:white;
+            width: 97.7%;
+            background: indigo;
+            font-size: 20px;
+        }
+
+        .blockChange, .blockDelete{
+            width: 97%;
+            padding: 15px;
+            cursor: pointer;
+            color: white;
+            background: #F08080;
+            border: 2px solid white;
+        }
+
+        .formAdd{
+            margin-top: 22px;
+        }
+
+        .formAdd form{
+            display: flex;
+        }
+
+        .formAdd form input, button{
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .formAdd form button{
+            cursor: pointer;
+            color: white;
+            background: green;
+            border: 1px solid gree;
+            transition: 0.5s ease;
+        }
+
+        .formAdd form input{
+            border: 1px solid green;
+            color: green;
+        }
+
+        .formAdd form button:hover{
+            color: green;
+            background: white;
+            transition: 0.5s ease;
+            border: 1px solid green;
+        }
+
+        .changeDelete{
+
+        }
+
+        .changeDelete form{
+            width: 100%;
+            margin: 5px;
+        }
+
+        .changeDelete form button{
+            font-size: 20px;
+        }
+
+        .changeDelete form button:hover{
+            color: #F08080;
+            background: white;
+            transition: 0.5s ease;
+        }
+
+        .blockChange{
+
+        }
+
+        .blockDelete{
+
+        }
+
+        .error{
+            width: 100%;
+            background: red;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
         }
     </style>
 </head>

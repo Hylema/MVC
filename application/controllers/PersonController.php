@@ -11,16 +11,63 @@ class PersonController extends Controller {
     }
 
     public function addAction() {
-        $this->view->render('Страница добавления пользователя');
+
+            if (isset($_POST['id'])) {
+//                $this->model->id = $_POST['id'];
+//                debug($this->model->id);
+            }
+
+        if (!isset($_POST['submit'])) {
+            $this->view->render('Страница добавления пользователя', [
+                'count' => $this->model->getCountFiles(),
+            ]);
+        } else {
+//            if(!empty($this->model->id)){
+//                $_POST['id'] = $this->model->id;
+//            } else {
+//                if (isset($_POST['id'])) {
+//                    $this->model->id = $_POST['id'];
+//                }
+//            }
+            if (isset($_POST['id'])) {
+                $this->model->id = $_POST['id'];
+            }
+            if (isset($_POST['name'])) {
+                $this->model->name = $_POST['name'];
+            }
+            if (isset($_POST['login'])) {
+                $this->model->login = $_POST['login'];
+            }
+            if (isset($_POST['birthday'])) {
+                $this->model->birthday = $_POST['birthday'];
+            }
+
+            if ($this->model->isFilledCorrectly()) {
+
+                // save
+                $this->model->save();
+                //redirect
+                $new_url = 'http://test.app.devspark.ru/';
+                header('Location: ' . $new_url);
+            } else {
+                // Show form
+                $this->view->render('Страница добавления пользователя', [
+                    'errors' => $this->model->mistake[0],
+                    'user' => $this->model->toArray(),
+                ]);
+            }
+        }
+        //$this->view->render('Страница добавления пользователя');
+        //$this->model->formCheck();
     }
 
     public function changeAction() {
         $this->view->render('Страница изменения пользователя');
-        $this->model->test();
     }
 
     public function deleteAction() {
-        $this->view->render('Страница удаление пользователя');
+        //$this->view->render('Страница удаление пользователя');
+        $this->model->formCheck();
     }
 
     public function searchAction() {

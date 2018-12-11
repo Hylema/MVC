@@ -3,7 +3,7 @@
 namespace application\core;
 
 use application\core\View;
-use application\models\User;
+use application\models\Person;
 
 class Controller {
 
@@ -14,7 +14,14 @@ class Controller {
     public function __construct($route) {
         $this->route = $route;
         $this->view = new View($route);
-        $this->model = new User();
+        $this->model = $this->loadModel($route['controller']);
+    }
+
+    public function loadModel($name) {
+        $path = 'application\models\\'.ucfirst($name);
+        if (class_exists($path)) {
+            return new $path;
+        }
     }
 
 }
