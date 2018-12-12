@@ -1,8 +1,8 @@
 <h1>Пользователи</h1>
 
 <form action="" method="post" style="display: flex">
-    <input type="search" placeholder="Поиск данных" value="<?php echo $search;?>" name="searchFile" class="searchFile">
-    <button type="submit" name="searchInput" class="searchInput" style="background: indigo; color:white">Поиск</button>
+    <input type="search" placeholder="Поиск данных" value="<?php echo (isset($vars['search']))?$vars['search']:""; ?>" name="searchFile" class="searchFile" id="search">
+    <input type="hidden" name="test" value="1" id="test">
 </form>
 
 <div style="display: flex; flex-wrap:wrap;">
@@ -43,3 +43,24 @@
 <div class="blockAdd">
     <a href="/person/add">Добавить</a>
 </div>
+
+<div class="search_result" id="resSearch"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+$(function(){
+    $("#search").keyup(function(){
+        var search = $("#search").val();
+        $.ajax({
+            type: "POST",
+            url: "http://test.app.devspark.ru/",
+            data: {"searchFile": search},
+            success: function(response){
+                $("#resSearch").html(response);
+            }
+        });
+    });
+});
+
+</script>

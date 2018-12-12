@@ -2,7 +2,7 @@
 
 require 'application/lib/Dev.php';
 
-use application\core\Router;
+use application\core\Singleton;
 
 //spl_autoload_register - Функция автозагрузки
 spl_autoload_register(function ($class){
@@ -16,6 +16,6 @@ spl_autoload_register(function ($class){
 //
 //session_start();
 
-$router = new Router;
+$router = Singleton::getInstance();
 
 $router->run();

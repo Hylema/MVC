@@ -120,11 +120,21 @@
             font-weight: bold;
         }
 
+        .formAdd form div{
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            border: 1px solid green;
+            font-weight: bold;
+            color: green;
+        }
+
         .formAdd form button{
             cursor: pointer;
             color: white;
             background: green;
-            border: 1px solid gree;
+            border: 1px solid green;
             transition: 0.5s ease;
         }
 
@@ -184,5 +194,7 @@
 
 
 </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 </html>

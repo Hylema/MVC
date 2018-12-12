@@ -3,6 +3,8 @@
 namespace application\models;
 
 use application\core\Model;
+use application\lib\FileJSON;
+
 //use application\lib\FileJSON;
 
 class Person extends Model {
@@ -21,7 +23,7 @@ class Person extends Model {
     //
     protected $post;
     protected $urlFolder = '/home/vagrant/code/test/public/USERS/';
-    //protected $urlFile = '/home/vagrant/code/test/public/USERS/USER';
+    protected $urlFile = '/home/vagrant/code/test/public/USERS/USER';
     protected $file;
 
     //Ошибки
@@ -52,7 +54,7 @@ class Person extends Model {
         $dir = opendir ("$path"); // открываем директорию
         $i = 1;
         while (false !== ($file = readdir($dir))) {
-            if (strpos($file, $i.'.json',1) ) {
+            if (strpos($file, '_'.$i.'.json',1)) {
                 $i++;
             }
         }
@@ -134,6 +136,13 @@ class Person extends Model {
             $this->login = $content['login'];
             $this->birthday = $content['birthday'];
         }
+    }
+
+    public function open($id){
+        $this->id = $id;
+        $content = file_get_contents($this->fileNameGen());
+        $content = json_decode($content, true);
+        return $content;
     }
 
     public function formCheck() {

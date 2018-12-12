@@ -13,7 +13,7 @@ class View {
         $this->path = $route['controller'].'/'.$route['action'];
     }
 
-    public function render($search, $vars = []) {
+    public function render($title, $vars = []) {
         if (file_exists('application/views/'.$this->path.'.php')){
             ob_start();
             //Загружаем сонтент для страницы

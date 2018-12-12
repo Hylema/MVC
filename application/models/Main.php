@@ -15,6 +15,17 @@ class Main extends Model {
     public $count = 0;
     protected $urlFolder = '/home/vagrant/code/test/public/USERS/';
 
+    public function renderOrNot() {
+        $arrFiles = $this->loadUsers();
+        $dataPost = $_POST;
+        if (!empty($dataPost['searchFile'])) {
+            $formCh = $this->searchInFiles($dataPost['searchFile'], $arrFiles); //Разбираем массив и находим совпадения
+            return $formCh;
+        } else {
+            return $arrFiles;
+        }
+    }
+
     public function getAllPerson() {
         return $this->filesJson;
     }
