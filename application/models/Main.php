@@ -2,9 +2,10 @@
 
 namespace application\models;
 
+use \Illuminate\Database\Eloquent\Model as Eloquent;
 use application\core\Model;
 
-class Main extends Model {
+class Main {
 
     public $search = [];
     public $flag = false;
@@ -61,37 +62,37 @@ class Main extends Model {
         return $result;
     }
 
-    public function test($dataPost, $arrFiles) {
-
-        foreach ($dataPost as $key => $value){
-            $this->num = substr ($key, 6);
-            $this->sense = $key;
-        }
-
-        foreach ($arrFiles as $keys => $values){
-            if ($keys == $this->num) {
-                if($this->delete.$this->num == $this->sense) {
-                    return $this->delete($this->delete.$this->num);
-                } else if($this->change.$this->num == $this->sense) {
-                    return $this->change($this->change.$this->num);
-                }
-            }
-        }
-
-    }
-
-    public function delete($arr){
-        $delete_url = 'http://test.app.devspark.ru/person/delete';
-        header('Location: '.$delete_url);
-        //echo 'Удалить '.$arr;
-    }
-
-    public function change($arr){
-        $change_url = 'http://test.app.devspark.ru/person/change';
-        header('Location: '.$change_url);
-        //echo 'Изменить '.$arr;
-
-    }
+//    public function test($dataPost, $arrFiles) {
+//
+//        foreach ($dataPost as $key => $value){
+//            $this->num = substr ($key, 6);
+//            $this->sense = $key;
+//        }
+//
+//        foreach ($arrFiles as $keys => $values){
+//            if ($keys == $this->num) {
+//                if($this->delete.$this->num == $this->sense) {
+//                    return $this->delete($this->delete.$this->num);
+//                } else if($this->change.$this->num == $this->sense) {
+//                    return $this->change($this->change.$this->num);
+//                }
+//            }
+//        }
+//
+//    }
+//
+//    public function delete($arr){
+//        $delete_url = 'http://test.app.devspark.ru/person/delete';
+//        header('Location: '.$delete_url);
+//        //echo 'Удалить '.$arr;
+//    }
+//
+//    public function change($arr){
+//        $change_url = 'http://test.app.devspark.ru/person/change';
+//        header('Location: '.$change_url);
+//        //echo 'Изменить '.$arr;
+//
+//    }
 
     public function searchInFiles($post, $arr) {
             foreach ($arr as $key){

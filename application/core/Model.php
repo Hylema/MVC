@@ -2,13 +2,14 @@
 
 namespace application\core;
 
-use application\lib\FileJSON;
+//use \Illuminate\Database\Eloquent\Model as Eloquent;
+//use application\lib\Db;
 
 abstract class Model {
 
-    public $filesJson;
-
-    public function __construct() {
-        $this->filesJson = new FileJSON;
-    }
+//    public $db;
+//
+//    public function __construct() {
+//        $this->db = new Db();
+//    }
 }

@@ -12,17 +12,15 @@ class PersonController extends Controller {
 
     public function addAction() {
 
-//
-
                 if (!isset($_POST['submit'])) {
                     if (isset($_POST['id'])) {
                         $arrUser = $this->model->open($_POST['id']);
                         $this->view->render('Страница изменения пользователя', [
-                            '$arrUser' => $arrUser,
+                            'arrUser' => $arrUser,
                         ]);
                     } else {
                         $this->view->render('Страница добавления пользователя', [
-                            'count' => $this->model->getCountFiles(),
+                            'count' => $this->model->getCountPersonOnFilesOrDataBase(),
                         ]);
                     }
                 } else {
@@ -50,7 +48,8 @@ class PersonController extends Controller {
                         // Show form
                         $this->view->render('Страница добавления пользователя', [
                             'errors' => $this->model->mistake[0],
-                            'user' => $this->model->toArray(),
+//                            'user' => $this->model->toArray(),
+                            'arrUser' => $this->model->toArray(),
                         ]);
                     }
 
@@ -65,7 +64,7 @@ class PersonController extends Controller {
 
     public function deleteAction() {
         //$this->view->render('Страница удаление пользователя');
-        $this->model->formCheck();
+        $this->model->deleteThisFile();
     }
 
     public function searchAction() {

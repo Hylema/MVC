@@ -169,6 +169,25 @@
             transition: 0.5s ease;
         }
 
+        .personsFrom{
+            display: flex;
+        }
+
+        .personsFrom form{
+            width: 100%;
+        }
+
+        .personsFrom form input{
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            background: coral;
+            border: none;
+            color: white;
+        }
+
         .blockChange{
 
         }

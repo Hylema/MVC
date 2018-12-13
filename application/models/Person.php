@@ -49,7 +49,7 @@ class Person extends Model {
 
     }
 
-    public function getCountFiles() {
+    public function getCountPersonOnFilesOrDataBase() {
         $path = $this->urlFolder;
         $dir = opendir ("$path"); // открываем директорию
         $i = 1;
@@ -80,7 +80,7 @@ class Person extends Model {
 //        }
 //    }
 
-    public function deleteOrChange($post) {
+    public function deleteOr($post) {
         foreach ($post as $key => $val){
 //            if($key == $post['change']){
 //                return $this->changeFile();
@@ -145,12 +145,12 @@ class Person extends Model {
         return $content;
     }
 
-    public function formCheck() {
+    public function deleteThisFile() {
 
         //Проверка для страницы 'добавления пользователя'
 
             $this->post = $_POST;
-            $this->deleteOrChange($this->post);
+            $this->deleteOr($this->post);
 
 
     }

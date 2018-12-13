@@ -1,5 +1,6 @@
 <?php
 
+require "application/config/db.php";
 require 'application/lib/Dev.php';
 
 use application\core\Singleton;
@@ -19,3 +20,5 @@ spl_autoload_register(function ($class){
 $router = Singleton::getInstance();
 
 $router->run();
+
+

@@ -1,3 +1,12 @@
+<div class="personsFrom">
+<form action="" method="post">
+    <input type="submit" value="Пользователи из DataBase" name="personFromDb">
+</form>
+<form action="" method="post">
+    <input type="submit" value="Пользователи из Json" name="personFromJson">
+</form>
+</div>
+
 <h1>Пользователи</h1>
 
 <form action="" method="post" style="display: flex">
